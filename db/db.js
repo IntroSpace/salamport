@@ -1,5 +1,6 @@
 const MongoClient = require("mongodb").MongoClient;
-const mongoClient = new MongoClient("mongodb://localhost:27017/", { useNewUrlParser: true });
+//const mongoClient = new MongoClient("mongodb://localhost:27017/", { useNewUrlParser: true });
+const mongoClient = new MongoClient("mongodb+srv://zodiac33:lol546231789lol@cluster0.q3due.mongodb.net/Cluster0?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 const base = "salamport"
 
