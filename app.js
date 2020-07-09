@@ -9,7 +9,7 @@ const jsonParser	= express.json()
 //const port			= 8000
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname+"/public/"))
+app.use(express.static(__dirname+"/public"))
 
 app.post('/register', jsonParser,function(req,res) {
     db
@@ -128,7 +128,7 @@ app.post('/user/login',function (req,res) {
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     // '/files' это директория в которую будут сохранятся файлы 
-    cb(null, 'public/imgs/')
+    cb(null, __dirname+'/public/imgs/')
   },
   filename: (req, file, cb) => {
     const { originalname } = file
