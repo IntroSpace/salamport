@@ -134,8 +134,11 @@ module.exports.getCode = function (email) {
 	return new Promise(function (resolve, reject) {
 		mongoClient
 			.connect(function (err, client) {
+				console.log(err)
+				console.log(client)
 				if (err) {reject(err)}
 				client
+					.db(base)
 					.collection("codes")
 					.find({"email": email})
 					.toArray(function (err, results) {
