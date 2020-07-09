@@ -4,6 +4,18 @@ const db			= require("./db/db.js")
 const mail			= require("./db/email.js")
 const multer = require('multer')
 
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    // '/files' это директория в которую будут сохранятся файлы 
+    cb(null, __dirname+'/public/imgs/')
+  },
+  filename: (req, file, cb) => {
+    const { originalname } = file
+    cb(null, originalname)
+  }
+})
+const upload = multer({ storage: storage })
+
 const app			= express()
 const jsonParser	= express.json()
 //const port			= 8000
@@ -125,17 +137,6 @@ app.post('/user/login',function (req,res) {
 }
 
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    // '/files' это директория в которую будут сохранятся файлы 
-    cb(null, __dirname+'/public/imgs/')
-  },
-  filename: (req, file, cb) => {
-    const { originalname } = file
-    cb(null, originalname)
-  }
-})
-const upload = multer({ storage: storage })
 app.post(
   '/user/img', 
   // Указываем multer в каком поле брать файл
