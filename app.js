@@ -18,10 +18,9 @@ const multer = require('multer')
 
 const app			= express()
 const jsonParser	= express.json()
-//const port			= 8000
+const port			= 8000
 
-//app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname+"/public"))
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/test', function (req, res) {
 	res.send("Ебать ты лох");
@@ -138,8 +137,7 @@ app.post('/user/login',function (req,res) {
 			})
 		}
 	}
-}
-
+})
 
 // app.post(
 //   '/user/img', 
@@ -149,4 +147,4 @@ app.post('/user/login',function (req,res) {
 //     res.json({status: 'Saved'})
 //   })
 
-app.listen(process.env.PORT)
+app.listen(port)
