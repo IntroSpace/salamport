@@ -136,7 +136,6 @@ module.exports.getCode = function (email) {
 			.connect(function (err, client) {
 				if (err) {reject(err)}
 				client
-					.db(base)
 					.collection("codes")
 					.find({"email": email})
 					.toArray(function (err, results) {
