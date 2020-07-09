@@ -4,17 +4,17 @@ const db			= require("./db/db.js")
 const mail			= require("./db/email.js")
 const multer = require('multer')
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    // '/files' это директория в которую будут сохранятся файлы 
-    cb(null, __dirname+'/public/imgs/')
-  },
-  filename: (req, file, cb) => {
-    const { originalname } = file
-    cb(null, originalname)
-  }
-})
-const upload = multer({ storage: storage })
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     // '/files' это директория в которую будут сохранятся файлы 
+//     cb(null, __dirname+'/public/imgs/')
+//   },
+//   filename: (req, file, cb) => {
+//     const { originalname } = file
+//     cb(null, originalname)
+//   }
+// })
+// const upload = multer({ storage: storage })
 
 const app			= express()
 const jsonParser	= express.json()
@@ -141,12 +141,12 @@ app.post('/user/login',function (req,res) {
 }
 
 
-app.post(
-  '/user/img', 
-  // Указываем multer в каком поле брать файл
-  upload.single('file'), 
-  (req, res) => {
-    res.json({status: 'Saved'})
-  })
+// app.post(
+//   '/user/img', 
+//   // Указываем multer в каком поле брать файл
+//   upload.single('file'), 
+//   (req, res) => {
+//     res.json({status: 'Saved'})
+//   })
 
 app.listen(process.env.PORT)
