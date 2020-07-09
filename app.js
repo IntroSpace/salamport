@@ -8,7 +8,7 @@ const app			= express()
 const jsonParser	= express.json()
 //const port			= 8000
 
-app.use(bodyParser.urlencoded({ extended: true }));
+//app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"))
 
 app.post('/register', jsonParser,function(req,res) {
