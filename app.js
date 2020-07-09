@@ -2,7 +2,7 @@ const bodyParser	= require("body-parser")
 const express		= require("express")
 const db			= require("./db/db.js")
 const mail			= require("./db/email.js")
-const multer = require('multer')
+//const multer = require('multer')
 
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
@@ -18,7 +18,6 @@ const multer = require('multer')
 
 const app			= express()
 const jsonParser	= express.json()
-const port			= process.env.PORT
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -147,4 +146,4 @@ app.post('/user/login',function (req,res) {
 //     res.json({status: 'Saved'})
 //   })
 
-app.listen(port)
+app.listen(process.env.PORT)
