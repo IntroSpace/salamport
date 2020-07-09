@@ -94,7 +94,7 @@ function randomCode() {
   )
 }
 
-app.post('/user/login',function (req,res) {
+app.post('/user/login', function (req,res) {
 	if (req.body.code == "") {
 		if (req.body.token == "") {
 			code = randomCode()
