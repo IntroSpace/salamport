@@ -2,7 +2,7 @@ const MongoClient = require("mongodb").MongoClient;
 const uuid = require('uuidv4');
 
 //const mongoClient = new MongoClient("mongodb://localhost:27017/", { useNewUrlParser: true });
-const mongoClient = new MongoClient("mongodb://heroku_w84gj2xp:c4rtm76bmtpcdnmm6utlh85li@ds215229.mlab.com:15229/heroku_w84gj2xp", { useNewUrlParser: true });
+const mongoClient = new MongoClient("mongodb://ds215229.mlab.com:15229/heroku_w84gj2xp", { useNewUrlParser: true });
 
 const base = "salamport"
 
