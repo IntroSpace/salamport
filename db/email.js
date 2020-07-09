@@ -15,6 +15,7 @@ module.exports.sendCode = function (email, code) {
 		subject: 'Ваш код',
 		text: code
 	}, function(error, info){
+		console.log(info)
 		if (error) {
 			return 0
 		} else {
