@@ -13,7 +13,7 @@ module.exports.sendCode = function (email, code) {
 		from: 'rsalamport@gmail.com',
 		to: email,
 		subject: 'Ваш код',
-		text: code
+		text: "Код: "+code
 	}, function(error, info){
 		console.log(error)
 		if (error) {
