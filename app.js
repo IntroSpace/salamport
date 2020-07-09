@@ -23,6 +23,10 @@ const jsonParser	= express.json()
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname+"/public"))
 
+app.get('/test', function (req, res) {
+	res.send("Ебать ты лох");
+})
+
 // app.post('/register', jsonParser,function(req,res) {
 //     db
 //     	.getUser(req.body.email)
